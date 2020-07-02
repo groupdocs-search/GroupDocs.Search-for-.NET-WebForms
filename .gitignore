@@ -1,52 +1,33 @@
-# Prerequisites
-*.d
+# Tool Runtime Dir
+packages/
+node_modules/
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+# Visual Studio
+.vs/
 
-# Linker output
-*.ilk
-*.map
-*.exp
+# User-specific files
+*.user
 
-# Precompiled Headers
-*.gch
-*.pch
+# Build results
+[Bb]in/
+[Oo]bj/
+*.zip
+package-lock.json
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+# Resources
+src/Resources/*
+!src/Resources/.gitkeep
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+# Licenses
+src/Licenses
+!src/Licenses/.gitkeep
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+# Document samples
+src/DocumentSamples
+!src/DocumentSamples/.gitkeep
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# Git
+!.gitkeep
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# Finder in OSX
+.DS_Store
