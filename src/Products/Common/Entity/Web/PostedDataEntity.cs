@@ -15,6 +15,11 @@ namespace GroupDocs.Search.WebForms.Products.Common.Entity.Web
         public int angle { get; set; }
         public List<int> pages { get; set; }
         public bool rewrite { get; set; }
-        public List<FilePropertyEntity> properties { get; set; }
+        public string[] terms { get; set; }
+
+        /// <summary>
+        /// Case sensitivity flag.
+        /// </summary>
+        public bool caseSensitive { get; set; }
     }
 }

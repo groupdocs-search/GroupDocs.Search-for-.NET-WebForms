@@ -44,8 +44,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GroupDocs.Search, Version=20.4.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\packages\GroupDocs.Search.20.4.0\lib\net20\GroupDocs.Search.dll</HintPath>
+    <Reference Include="Aspose.HTML, Version=20.9.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.HTML.20.9.0\lib\net40\Aspose.HTML.dll</HintPath>
+    </Reference>
+    <Reference Include="GroupDocs.Search, Version=20.11.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\GroupDocs.Search.20.11.0\lib\net20\GroupDocs.Search.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -157,10 +160,11 @@
     <Compile Include="Products\Common\Config\ServerConfiguration.cs" />
     <Compile Include="Products\Common\Entity\Web\ExceptionEntity.cs" />
     <Compile Include="Products\Common\Entity\Web\FileDescriptionEntity.cs" />
-    <Compile Include="Products\Common\Entity\Web\FilePropertyEntity.cs" />
     <Compile Include="Products\Common\Entity\Web\LoadDocumentEntity.cs" />
     <Compile Include="Products\Common\Entity\Web\PageDescriptionEntity.cs" />
     <Compile Include="Products\Common\Entity\Web\PostedDataEntity.cs" />
+    <Compile Include="Products\Common\Entity\Web\Request\HighlightTermsRequest.cs" />
+    <Compile Include="Products\Common\Entity\Web\Response\HighlightTermsResponse.cs" />
     <Compile Include="Products\Common\Entity\Web\UploadedDocumentEntity.cs" />
     <Compile Include="Products\Common\Resources\Resources.cs" />
     <Compile Include="Products\Common\Util\Comparator\CaseInsensitiveComparer.cs" />
@@ -170,14 +174,28 @@
     <Compile Include="Products\Search\Config\SearchConfiguration.cs" />
     <Compile Include="Products\Search\Controllers\SearchApiController.cs" />
     <Compile Include="Products\Search\Entity\Web\IndexedFileDescriptionEntity.cs" />
+    <Compile Include="Products\Search\Entity\Web\Request\AlphabetUpdateRequest.cs" />
+    <Compile Include="Products\Search\Entity\Web\Request\HomophonesUpdateRequest.cs" />
     <Compile Include="Products\Search\Entity\Web\Request\SearchPostedData.cs" />
+    <Compile Include="Products\Search\Entity\Web\Request\SpellingCorrectorUpdateRequest.cs" />
+    <Compile Include="Products\Search\Entity\Web\Request\StopWordsUpdateRequest.cs" />
+    <Compile Include="Products\Search\Entity\Web\Request\SynonymsUpdateRequest.cs" />
+    <Compile Include="Products\Search\Entity\Web\Response\AlphabetCharacter.cs" />
+    <Compile Include="Products\Search\Entity\Web\Response\AlphabetReadResponse.cs" />
+    <Compile Include="Products\Search\Entity\Web\Response\HomophonesReadResponse.cs" />
+    <Compile Include="Products\Search\Entity\Web\Response\IndexPropertiesResponse.cs" />
     <Compile Include="Products\Search\Entity\Web\Response\SearchDocumentResult.cs" />
+    <Compile Include="Products\Search\Entity\Web\Response\SpellingCorrectorReadResponse.cs" />
+    <Compile Include="Products\Search\Entity\Web\Response\StopWordsReadResponse.cs" />
     <Compile Include="Products\Search\Entity\Web\Response\SummarySearchResult.cs" />
     <Compile Include="Products\Common\Util\Comparator\FileNameComparator.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Products\Search\Entity\Web\Response\SynonymsReadResponse.cs" />
     <Compile Include="Products\Search\Service\SearchService.cs" />
+    <Compile Include="Products\Search\Service\TermFinder.cs" />
+    <Compile Include="Products\Search\Service\TermHighlighter.cs" />
     <Compile Include="Products\Search\Util\Directory\DirectoryUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />

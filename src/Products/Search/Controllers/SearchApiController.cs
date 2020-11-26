@@ -13,6 +13,7 @@ using GroupDocs.Search.WebForms.Products.Common.Util.Comparator;
 using GroupDocs.Search.WebForms.Products.Search.Entity.Web;
 using GroupDocs.Search.WebForms.Products.Search.Service;
 using GroupDocs.Search.WebForms.Products.Search.Entity.Web.Request;
+using GroupDocs.Search.WebForms.Products.Common.Entity.Web.Request;
 
 namespace GroupDocs.Search.WebForms.Products.Search.Controllers
 {
@@ -301,6 +302,240 @@ namespace GroupDocs.Search.WebForms.Products.Search.Controllers
             }
 
             return Request.CreateResponse(HttpStatusCode.OK, indexingFilesList);
+        }
+
+        /// <summary>
+        /// Gets index properties.
+        /// </summary>
+        /// <returns>The index properties.</returns>
+        [HttpPost]
+        [Route("search/getIndexProperties")]
+        public HttpResponseMessage GetIndexProperties()
+        {
+            try
+            {
+                var indexProperties = SearchService.GetIndexProperties();
+                return this.Request.CreateResponse(HttpStatusCode.OK, indexProperties);
+            }
+            catch (Exception ex)
+            {
+                return this.Request.CreateResponse(HttpStatusCode.InternalServerError, Resources.GenerateException(ex));
+            }
+        }
+
+        /// <summary>
+        /// Gets the contents of the alphabet dictionary.
+        /// </summary>
+        /// <returns>The contents of the alphabet dictionary.</returns>
+        [HttpPost]
+        [Route("search/getAlphabetDictionary")]
+        public HttpResponseMessage GetAlphabetDictionary()
+        {
+            try
+            {
+                var response = SearchService.GetAlphabetDictionary();
+                return this.Request.CreateResponse(HttpStatusCode.OK, response);
+            }
+            catch (Exception ex)
+            {
+                return this.Request.CreateResponse(HttpStatusCode.InternalServerError, Resources.GenerateException(ex));
+            }
+        }
+
+        /// <summary>
+        /// Updates the contents of the alphabet dictionary.
+        /// </summary>
+        /// <param name="request">The new contents of the alphabet dictionary.</param>
+        /// <returns>HTTP response message.</returns>
+        [HttpPost]
+        [Route("search/setAlphabetDictionary")]
+        public HttpResponseMessage SetAlphabetDictionary(AlphabetUpdateRequest request)
+        {
+            try
+            {
+                SearchService.SetAlphabetDictionary(request);
+                return this.Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (Exception ex)
+            {
+                return this.Request.CreateResponse(HttpStatusCode.InternalServerError, Resources.GenerateException(ex));
+            }
+        }
+
+        /// <summary>
+        /// Gets the contents of the alphabet dictionary.
+        /// </summary>
+        /// <returns>The contents of the alphabet dictionary.</returns>
+        [HttpPost]
+        [Route("search/getStopWordDictionary")]
+        public HttpResponseMessage GetStopWordDictionary()
+        {
+            try
+            {
+                var response = SearchService.GetStopWordDictionary();
+                return this.Request.CreateResponse(HttpStatusCode.OK, response);
+            }
+            catch (Exception ex)
+            {
+                return this.Request.CreateResponse(HttpStatusCode.InternalServerError, Resources.GenerateException(ex));
+            }
+        }
+
+        /// <summary>
+        /// Updates the contents of the stop word dictionary.
+        /// </summary>
+        /// <param name="request">The new contents of the stop word dictionary.</param>
+        /// <returns>HTTP response message.</returns>
+        [HttpPost]
+        [Route("search/setStopWordDictionary")]
+        public HttpResponseMessage SetStopWordDictionary(StopWordsUpdateRequest request)
+        {
+            try
+            {
+                SearchService.SetStopWordDictionary(request);
+                return this.Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (Exception ex)
+            {
+                return this.Request.CreateResponse(HttpStatusCode.InternalServerError, Resources.GenerateException(ex));
+            }
+        }
+
+        /// <summary>
+        /// Gets the contents of the synonym dictionary.
+        /// </summary>
+        /// <returns>The contents of the synonym dictionary.</returns>
+        [HttpPost]
+        [Route("search/getSynonymDictionary")]
+        public HttpResponseMessage GetSynonymDictionary()
+        {
+            try
+            {
+                var response = SearchService.GetSynonymGroups();
+                return this.Request.CreateResponse(HttpStatusCode.OK, response);
+            }
+            catch (Exception ex)
+            {
+                return this.Request.CreateResponse(HttpStatusCode.InternalServerError, Resources.GenerateException(ex));
+            }
+        }
+
+        /// <summary>
+        /// Updates the contents of the synonym dictionary.
+        /// </summary>
+        /// <param name="request">The new contents of the synonym dictionary.</param>
+        /// <returns>HTTP response message.</returns>
+        [HttpPost]
+        [Route("search/setSynonymDictionary")]
+        public HttpResponseMessage SetSynonymDictionary(SynonymsUpdateRequest request)
+        {
+            try
+            {
+                SearchService.SetSynonymGroups(request);
+                return this.Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (Exception ex)
+            {
+                return this.Request.CreateResponse(HttpStatusCode.InternalServerError, Resources.GenerateException(ex));
+            }
+        }
+
+        /// <summary>
+        /// Gets the contents of the homophone dictionary.
+        /// </summary>
+        /// <returns>The contents of the homophone dictionary.</returns>
+        [HttpPost]
+        [Route("search/getHomophoneDictionary")]
+        public HttpResponseMessage GetHomophoneDictionary()
+        {
+            try
+            {
+                var response = SearchService.GetHomophoneGroups();
+                return this.Request.CreateResponse(HttpStatusCode.OK, response);
+            }
+            catch (Exception ex)
+            {
+                return this.Request.CreateResponse(HttpStatusCode.InternalServerError, Resources.GenerateException(ex));
+            }
+        }
+
+        /// <summary>
+        /// Updates the contents of the homophone dictionary.
+        /// </summary>
+        /// <param name="request">The new contents of the homophone dictionary.</param>
+        /// <returns>HTTP response message.</returns>
+        [HttpPost]
+        [Route("search/setHomophoneDictionary")]
+        public HttpResponseMessage SetHomophoneDictionary(HomophonesUpdateRequest request)
+        {
+            try
+            {
+                SearchService.SetHomophoneGroups(request);
+                return this.Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (Exception ex)
+            {
+                return this.Request.CreateResponse(HttpStatusCode.InternalServerError, Resources.GenerateException(ex));
+            }
+        }
+
+        /// <summary>
+        /// Gets the contents of the spelling corrector dictionary.
+        /// </summary>
+        /// <returns>The contents of the spelling corrector dictionary.</returns>
+        [HttpPost]
+        [Route("search/getSpellingCorrectorDictionary")]
+        public HttpResponseMessage GetSpellingCorrectorDictionary()
+        {
+            try
+            {
+                var response = SearchService.GetSpellingCorrectorWords();
+                return this.Request.CreateResponse(HttpStatusCode.OK, response);
+            }
+            catch (Exception ex)
+            {
+                return this.Request.CreateResponse(HttpStatusCode.InternalServerError, Resources.GenerateException(ex));
+            }
+        }
+
+        /// <summary>
+        /// Updates the contents of the spelling corrector dictionary.
+        /// </summary>
+        /// <param name="request">The new contents of the spelling corrector dictionary.</param>
+        /// <returns>HTTP response message.</returns>
+        [HttpPost]
+        [Route("search/setSpellingCorrectorDictionary")]
+        public HttpResponseMessage SetSpellingCorrectorDictionary(SpellingCorrectorUpdateRequest request)
+        {
+            try
+            {
+                SearchService.SetSpellingCorrectorWords(request);
+                return this.Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (Exception ex)
+            {
+                return this.Request.CreateResponse(HttpStatusCode.InternalServerError, Resources.GenerateException(ex));
+            }
+        }
+
+        /// <summary>
+        /// Updates the contents of the stop word dictionary.
+        /// </summary>
+        /// <param name="request">The new contents of the stop word dictionary.</param>
+        /// <returns>HTTP response message.</returns>
+        [HttpPost]
+        [Route("search/highlightTerms")]
+        public HttpResponseMessage HighlightTerms(HighlightTermsRequest request)
+        {
+            try
+            {
+                var response = SearchService.HighlightTerms(request, this.globalConfiguration.Search.GetFilesDirectory());
+                return this.Request.CreateResponse(HttpStatusCode.OK, response);
+            }
+            catch (Exception ex)
+            {
+                return this.Request.CreateResponse(HttpStatusCode.InternalServerError, Resources.GenerateException(ex));
+            }
         }
     }
 }
