@@ -84,6 +84,15 @@ For all methods above you can adjust settings in `configuration.yml`. By default
 | **`indexDirectory`**   | String | `DocumentSamples/Search/Index` | Absolute path to index directory |
 | **`indexedFilesDirectory`** | String | `DocumentSamples/Search/Indexed` | Absolute path to indexed files directory |
 
+## Troubleshooting
+### How to set custom baseURL
+BaseURL is fetched from address bar however you can set custom baseURL by adding *forRoot* parameter at [app.module.ts](https://github.com/groupdocs-search/GroupDocs.Search-for-.NET-WebForms/blob/master/src/client/apps/search/src/app/app.module.ts#L10)
+
+**Example:**
+```js
+SearchModule.forRoot("http://localhost:8080")
+```
+
 ## License
 The MIT License (MIT). 
 
