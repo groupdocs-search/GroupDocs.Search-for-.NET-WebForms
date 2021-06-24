@@ -110,5 +110,6 @@ Please have a look at the LICENSE.md for more details
 - **Documentation:** [GroupDocs.Search for .NET Documentation](https://docs.groupdocs.com/display/searchnet/Home)
 - **Free Support Forum:** [GroupDocs.Search for .NET Free Support Forum](https://forum.groupdocs.com/c/search)
 - **Paid Support Helpdesk:** [GroupDocs.Search for .NET Paid Support Helpdesk](https://helpdesk.groupdocs.com)
-- **Search:** [GroupDocs.Search for .NET Paid Search](https://search.groupdocs.com/)
 - **Blog:** [GroupDocs.Search for .NET Blog](https://blog.groupdocs.com/category/search/)
+- **Search:** [GroupDocs.Search for .NET Search](https://search.groupdocs.com/)
+
